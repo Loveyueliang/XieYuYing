@@ -1,5 +1,5 @@
 #coding:utf-8
-class NPC():
+class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
     def __init__(self):
         self.name = ''
@@ -17,16 +17,27 @@ class NPC():
         '''
         return 'Student object (name: %s)' % self.name
 
-class XieYuYing(NPC):
+class XieYuYing(People):
     def __init__(self,enthusiasm):
         '''
 
         :param enthusiasm:好感度
         '''
-        NPC.__init__(self)
+        People.__init__(self)
         self.name = '谢雨莹'
         self.enthusiasm = enthusiasm
+
+class Player(People):
+    def __init__(self):
+        """
+        :param gold:记录玩家金币,后续考虑做成私有__gold属性,然后用方法修改该值;后期可以考虑弱加密,类似gold*2+1
+        """
+        People.__init__(self)
+        self.gold = 0
+
 
 
 xie = XieYuYing(80)
 print(xie)
+paly = Player()
+print(paly)
