@@ -37,3 +37,8 @@ class Text_Monologue(Text):
         self.Dict_Monologue[No] = Texts
     def Output(self,No):
         print(self.Dict_Monologue[No])
+
+# haohua = 1
+# haohua += 1
+# zengliang = 1
+# jishu = 1

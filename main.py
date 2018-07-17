@@ -65,7 +65,6 @@ for each in Text02:
         Monologue_Text.Input(each,Monologue_flag)
 
 
-
 # 序章的最后一句话，这里会用到更新后的name...
 Monologue_Text.Output(6)
 
