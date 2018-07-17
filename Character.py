@@ -18,8 +18,26 @@ class People():
         '''
         return 'Student object (name: %s)' % self.name
 
-class XieYuYing(People):
-    #谢雨莹的好感度
+class Impression():
+    '''
+    定义一个好感度的类,需要参数用执行的动作,返回值是对应的好感度,值分 正负.
+    '''
+    def __init__(self):
+        self.impression = 0
+    def addImpression(self):
+        '''
+        增加好感度,需要读取一个相应动作和要增加的好感度对应的字典.
+        :return:
+        '''
+        pass
+    def subImpression(self):
+        '''
+        减少好感度,需要读取一个相应动作和要减少的好感度对应的字典.
+        :return:
+        '''
+
+class XieYuYing(People, Impression):
+    #谢雨莹的好感度,还需要亲密度:好感度另外创建类,亲密度写该类里面
     def __init__(self, impression):
         '''
         :param impression:好感度
@@ -40,6 +58,9 @@ class XieYuYing(People):
         :return:
         '''
         pass
+
+class FatBoss(People, Impression):
+    pass
 
 class Player(People):
     def __init__(self):
