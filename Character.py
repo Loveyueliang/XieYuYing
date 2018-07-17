@@ -36,11 +36,20 @@ class XieYuYing(People):
 class Player(People):
     def __init__(self):
         """
+        :param name:玩家名字,需要玩家自定义所以用装饰器,限制命名条件
         :param gold:记录玩家金币,后续考虑做成私有__gold属性,然后用方法修改该值;后期可以考虑弱加密,类似gold*2+1
         """
         People.__init__(self)
-        self.name = '玩家名:稍后再考虑是加个自定义名字,还是'
         self.gold = 0
+    @property
+    def name(self):
+        return self._name
+    #装饰器用来确认输出的是汉字,调用的时候用赋值语句
+    @name.setter
+    def name(self, value):
+        if not '\u4e00' <= value <= '\u9fff':
+            raise ValueError("请输入中文名字")
+        self._name = value
     def getGold(self):
         '''
         玩家金币增加,当调用的时候,增加1000元
@@ -56,3 +65,9 @@ class Player(People):
         '''
         price = commodity #后面换成数据库方法,遍历商品列表的时候直接调用数据库就行了.
         self.gold -= price
+
+pl = Player()
+
+pl.name = 'value'
+print(pl.name)
+print(pl)
