@@ -66,8 +66,8 @@ class Player(People):
         price = commodity #后面换成数据库方法,遍历商品列表的时候直接调用数据库就行了.
         self.gold -= price
 
-pl = Player()
-
-pl.name = 'value'
-print(pl.name)
-print(pl)
+# pl = Player()
+#
+# pl.name = 'value'
+# print(pl.name)
+# print(pl)
