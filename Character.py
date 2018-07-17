@@ -1,9 +1,10 @@
 #coding:utf-8
+
 class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
     def __init__(self):
         self.name = '对不起,名字未定义.'
-    def invoking_database(self,):
+    def invoking_database(self):
         '''
         参数用name 和剧情代码一起
         :param talk_data:调用数据库的对话存储在该属性里
@@ -18,14 +19,21 @@ class People():
         return 'Student object (name: %s)' % self.name
 
 class XieYuYing(People):
-    def __init__(self,enthusiasm):
+    #谢雨莹的好感度
+    def __init__(self, impression):
         '''
-        :param enthusiasm:好感度
+        :param impression:好感度
         '''
         People.__init__(self)
         self.name = '谢雨莹'
-        self.enthusiasm = enthusiasm
+        self.impression = impression
 
+    def adjustImpression(self):
+        '''
+        调整谢雨莹的好感度
+        :return:
+        '''
+        pass
     def printNarration(self):
         '''
         调用 一 旁白
