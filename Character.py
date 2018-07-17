@@ -3,7 +3,6 @@ class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
     def __init__(self):
         self.name = '对不起,名字未定义.'
-        pass
     def invoking_database(self,):
         '''
         参数用name 和剧情代码一起
