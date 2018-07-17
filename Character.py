@@ -1,5 +1,5 @@
 #coding:utf-8
-
+#author:SiJinHui
 class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
     def __init__(self):
@@ -38,13 +38,14 @@ class Impression():
 
 class XieYuYing(People, Impression):
     #谢雨莹的好感度,还需要亲密度:好感度另外创建类,亲密度写该类里面
-    def __init__(self, impression):
+    def __init__(self):
         '''
         :param impression:好感度
         '''
         People.__init__(self)
+        Impression.__init__(self)
         self.name = '谢雨莹'
-        self.impression = impression
+        #self.impression = impression
 
     def adjustImpression(self):
         '''
@@ -60,7 +61,10 @@ class XieYuYing(People, Impression):
         pass
 
 class FatBoss(People, Impression):
-    pass
+    def __init__(self):
+        People.__init__(self)
+        Impression.__init__(self)
+
 
 class Player(People):
     def __init__(self):
