@@ -27,22 +27,22 @@ Player = Character.Player()
 # 序章，因为需要玩家输入名字...所以这一段直接输出。
 print("——嗨，Jinx！")
 # 通过输入任意键来触发下一对话！后期会更改为鼠标事件触发和超时多少秒触发！！！！！！
-input()
-# time.sleep(1.5)
+# input()
+time.sleep(1.5)
 print("——真是的，老感觉你还在，有时候做梦都会梦见你呢……")
-input()
-# time.sleep(1.5)
+# input()
+time.sleep(1.5)
 print("——对不起……")
-input()
-# time.sleep(1.5)
+# input()
+time.sleep(1.5)
 print("——对了，明天我就要去做最后一件事了，如果还没有结果的话……我们就永远的再见吧！")
-input()
-# time.sleep(1.5)
+# input()
+time.sleep(1.5)
 print("——等等，差点忘了，那张身份证我还没看呢，上面的名字是……")
-input()
-# time.sleep(1.5)
+# input()
+time.sleep(1.5)
 print("【请输入身份证姓名：name】")
-# 这里让玩家输入名字...
+#这里让玩家输入名字...
 Player.name = input()
 
 
