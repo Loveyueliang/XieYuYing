@@ -35,9 +35,3 @@ class Player(People):
         People.__init__(self)
         self.gold = 0
 
-
-
-xie = XieYuYing(80)
-print(xie)
-paly = Player()
-print(paly)
