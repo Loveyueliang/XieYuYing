@@ -1,10 +1,10 @@
-from scr import character, Test_Asset
+from scr import character, Test_Asset, baiduaip
 import time
 import re
 
 
 # 将储存在文件中的文本内容（剧本）读取到程序并储存在一个临时列表并按照行Text01里
-Text = open('bin\dialogue.txt','r+',encoding='gbk')
+Text = open('dialogue.txt','r+',encoding='gbk')
 Text01 = Text.readlines()
 # 定义用来分类储存对话、旁白、独白等文本的类，文本在类中以字典的形式
 # 保存，所以还有以flag结尾的变量来表示它们对应的键。（如果还需要更多
