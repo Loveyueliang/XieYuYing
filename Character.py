@@ -19,6 +19,13 @@ class People():
         '''
         return 'Student object (name: %s)' % self.name
 
+class Commodity():
+    '''
+    商品类,暂时搁置
+    '''
+    def __init__(self):
+        pass
+
 class Impression():
     '''
     定义一个好感度的类,需要参数用执行的动作,返回值是对应的好感度,值分 正负.
