@@ -1,3 +1,6 @@
+import  os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class Setting(object):
     # 设置文件的说明
     def __init__(self):
