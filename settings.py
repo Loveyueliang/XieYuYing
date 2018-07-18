@@ -1,5 +1,5 @@
 class Setting(object):
-    # docstring for Settings
+    # 设置文件的说明
     def __init__(self):
         '''
         游戏的初始化设置
