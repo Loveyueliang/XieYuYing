@@ -100,7 +100,6 @@ class FatBoss(People, Impression):
         Impression.__init__(self)
         self.impression = 20
 
-
 class Player(People):
     def __init__(self):
         """
