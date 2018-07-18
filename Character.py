@@ -22,15 +22,15 @@ class People():
 class Impression():
     '''
     定义一个好感度的类,需要参数用执行的动作,返回值是对应的好感度,值分 正负.
+    :param impression: 初始化为0 要是子类有亲密度会被覆盖掉
+    :param impressionIndex: 好感度在列表中的索引 初始值为0 在调用后面方法的时候会被覆盖.
+    :return 返回值暂定为操作后的好感度
     '''
     def __init__(self):
         self.impression = 0
         self.impressionIndex = 0
         self.algorithmic = (1 / (e ** (- x - 8)) for x in range(1 * 100))
     def addImpression(self):
-        '''
-        :return:返回值暂时定为操作后的好感度
-        '''
         #print("-------------------", self.impression)
         self.impressionIndex = self.alg().index(self.impression)
         self.impression = self.alg()[self.impressionIndex+1]
@@ -66,12 +66,11 @@ class XieYuYing(People, Impression):
     #谢雨莹的好感度,还需要亲密度:好感度另外创建类,亲密度写该类里面
     def __init__(self):
         '''
-        :param impression:谢雨莹的初始好感度,固定值,暂时设定为调用70次的next(alg())不知道行不行
+        :param impression:谢雨莹的初始好感度,50,这个值需要更改的话,请寻找好感度列表中已有的值
         '''
         People.__init__(self)
         Impression.__init__(self)
         self.name = '谢雨莹'
-        self.impressionIndex = 20
         self.impression = 50
         #self.impression = n
         #print("--------------------------------------",n)
@@ -92,6 +91,7 @@ class FatBoss(People, Impression):
     def __init__(self):
         People.__init__(self)
         Impression.__init__(self)
+        self.impression = 20
 
 
 class Player(People):
@@ -134,9 +134,12 @@ class Player(People):
     #     #但是好感度模块做好后,现在玩家的话暂时不需要单独区分
 
 
-pl = XieYuYing()
-print("初始好感度:",pl.impression)
-print("增加一次好感度:",pl.addImpression())
-#print(pl.impression)
-print("增加一次好感度:",pl.addImpression())
-print("减少一次好感度:",pl.subImpression())
+
+
+#好感度测试模块
+# pl = XieYuYing()
+# print("初始好感度:",pl.impression)
+# print("增加一次好感度:",pl.addImpression())
+# #print(pl.impression)
+# print("增加一次好感度:",pl.addImpression())
+# print("减少一次好感度:",pl.subImpression())
