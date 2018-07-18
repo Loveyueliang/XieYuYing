@@ -7,12 +7,6 @@ SECRET_KEY = '1GpZltLF6kod3dkleGEChq5Aqe999PFo'
 
 client = AipNlp(APP_ID, API_KEY, SECRET_KEY)
 
-# text = "今天很失败"
-# res = client.sentimentClassify(text)
-# print(type(res),res)
-# #res[senti]
-
-
 
 '''
 参数	是否必须	类型	说明
