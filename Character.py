@@ -1,5 +1,6 @@
 #coding:utf-8
 #author:SiJinHui
+from math import e
 class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
     def __init__(self):
@@ -24,29 +25,55 @@ class Impression():
     '''
     def __init__(self):
         self.impression = 0
+        self.impressionIndex = 0
+        self.algorithmic = (1 / (e ** (- x - 8)) for x in range(1 * 100))
     def addImpression(self):
         '''
-        增加好感度,需要读取一个相应动作和要增加的好感度对应的字典.
-        :return:
+        增加好感度,需要读取一个相应动作和要增加的好感度对应的字典.采用正常函数递增
+        :return:返回值暂时定为操作后的好感度
         '''
-        pass
+        #print("-------------------", self.impression)
+        self.impressionIndex = self.alg().index(self.impression)
+        self.impression = self.alg()[self.impressionIndex+1]
+        #print("-------------------", self.impression)
+        return self.impression
     def subImpression(self):
         '''
-        减少好感度,需要读取一个相应动作和要减少的好感度对应的字典.
+        减少好感度,需要读取一个相应动作和要减少的好感度对应的字典.采用函数右移方式
         :return:
         '''
+
+    def alg(self):
+        '''
+        该函数为生成器,,生成器不行,改列表了
+        :return: 用next调用来返回下一次的好感度
+        '''
+        x = 0
+        impressionList = []
+        while x < 100:
+            if x <= 20:
+                y = (x * x / 20) + (3 * x) / 2
+                impressionList.append(round(y))
+            if x > 20:
+                y = 110 - 1000 / x
+                impressionList.append(round(y))
+            x += 1
+        #print(impressionList)
+        return impressionList
 
 class XieYuYing(People, Impression):
     #谢雨莹的好感度,还需要亲密度:好感度另外创建类,亲密度写该类里面
     def __init__(self):
         '''
-        :param impression:好感度
+        :param impression:谢雨莹的初始好感度,固定值,暂时设定为调用70次的next(alg())不知道行不行
         '''
         People.__init__(self)
         Impression.__init__(self)
         self.name = '谢雨莹'
-        #self.impression = impression
-
+        self.impressionIndex = 20
+        self.impression = 50
+        #self.impression = n
+        #print("--------------------------------------",n)
     def adjustImpression(self):
         '''
         调整谢雨莹的好感度
@@ -98,8 +125,18 @@ class Player(People):
         '''
         price = commodity #后面换成数据库方法,遍历商品列表的时候直接调用数据库就行了.
         self.gold -= price
+    def invoking_database(self):
+        print("玩家的话,输入或者输出")
+        talk = input("某些语句")
+        #判断输入的语句的好感度,跟数据库里的某些好语句 和 坏语句做对比,然后决定调用,增/删好感度
+        if talk == x:
+            H += 1/(e**(-x-8))
 
-# pl = Player()
+pl = XieYuYing()
+print(pl.impression)
+print(pl.addImpression())
+#print(pl.impression)
+print(pl.addImpression())
 #
 # pl.name = 'value'
 # print(pl.name)
