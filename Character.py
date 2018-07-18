@@ -29,7 +29,6 @@ class Impression():
         self.algorithmic = (1 / (e ** (- x - 8)) for x in range(1 * 100))
     def addImpression(self):
         '''
-        增加好感度,需要读取一个相应动作和要增加的好感度对应的字典.采用正常函数递增
         :return:返回值暂时定为操作后的好感度
         '''
         #print("-------------------", self.impression)
@@ -39,9 +38,11 @@ class Impression():
         return self.impression
     def subImpression(self):
         '''
-        减少好感度,需要读取一个相应动作和要减少的好感度对应的字典.采用函数右移方式
         :return:
         '''
+        self.impressionIndex = self.alg().index(self.impression)
+        self.impression = self.alg()[self.impressionIndex - 1]
+        return self.impression
 
     def alg(self):
         '''
@@ -125,19 +126,17 @@ class Player(People):
         '''
         price = commodity #后面换成数据库方法,遍历商品列表的时候直接调用数据库就行了.
         self.gold -= price
-    def invoking_database(self):
-        print("玩家的话,输入或者输出")
-        talk = input("某些语句")
-        #判断输入的语句的好感度,跟数据库里的某些好语句 和 坏语句做对比,然后决定调用,增/删好感度
-        if talk == x:
-            H += 1/(e**(-x-8))
+
+    # def invoking_database(self):
+    #     print("玩家的话,输入或者输出")
+    #     talk = input("某些语句")
+    #     #判断输入的语句的好感度,跟数据库里的某些好语句 和 坏语句做对比,然后决定调用,增/删好感度
+    #     #但是好感度模块做好后,现在玩家的话暂时不需要单独区分
+
 
 pl = XieYuYing()
-print(pl.impression)
-print(pl.addImpression())
+print("初始好感度:",pl.impression)
+print("增加一次好感度:",pl.addImpression())
 #print(pl.impression)
-print(pl.addImpression())
-#
-# pl.name = 'value'
-# print(pl.name)
-# print(pl)
+print("增加一次好感度:",pl.addImpression())
+print("减少一次好感度:",pl.subImpression())
