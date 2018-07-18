@@ -78,7 +78,11 @@ class XieYuYing(People, Impression):
         People.__init__(self)
         Impression.__init__(self)
         self.name = '谢雨莹'
-        self.impression = 50
+        self.impression = 70
+    #好感度,亲密度增长速度会随着好感度变化
+    def intimacy(self):
+        pass
+
 
     def printNarration(self):
         '''

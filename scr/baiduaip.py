@@ -10,7 +10,7 @@ client = AipNlp(APP_ID, API_KEY, SECRET_KEY)
 # text = "今天很失败"
 # res = client.sentimentClassify(text)
 # print(type(res),res)
-
+# #res[senti]
 
 
 
