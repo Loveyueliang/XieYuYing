@@ -1,5 +1,5 @@
 from aip import AipNlp
-#情感倾向分析
+#情感倾向分析,,返回值是个字典,调用字典的key:sentiment 来判断是好的还是坏的,就行了
 """ 你的 APPID AK SK """
 APP_ID = '11553722'
 API_KEY = 'oibkBOpvGpuSHCbRqv3W2AjN'
