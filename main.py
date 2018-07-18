@@ -1,4 +1,4 @@
-import Character
+import character
 import Test_Asset
 import time
 import re
@@ -18,7 +18,7 @@ Aside_flag = 0
 Monologue_flag = 0
 
 # 定义的玩家类，用来接收玩家的名称
-Player = Character.Player()
+Player = character.Player()
 
 
 # 序章，因为需要玩家输入名字...所以这一段直接输出。
