@@ -79,14 +79,7 @@ class XieYuYing(People, Impression):
         Impression.__init__(self)
         self.name = '谢雨莹'
         self.impression = 50
-        #self.impression = n
-        #print("--------------------------------------",n)
-    def adjustImpression(self):
-        '''
-        调整谢雨莹的好感度
-        :return:
-        '''
-        pass
+
     def printNarration(self):
         '''
         调用 一 旁白
