@@ -2,7 +2,7 @@
 #author:SiJinHui
 from math import e
 class People():
-    #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种
+    #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种,暂时搁置,起码还没学数据库,暂时采用文件调用
     def __init__(self):
         self.name = '对不起,名字未定义.'
     def invoking_database(self):
@@ -84,12 +84,14 @@ class XieYuYing(People, Impression):
         pass
 
 
-    def printNarration(self):
+    def adjustImpression(self , sentiment):
         '''
-        调用 一 旁白
         :return:
         '''
-        pass
+        if sentiment == 2:
+            return self.addImpression()
+        if sentiment == 0:
+            return self.subImpression()
 
 class FatBoss(People, Impression):
     def __init__(self):

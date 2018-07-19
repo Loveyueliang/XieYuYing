@@ -40,6 +40,7 @@ def main():
 
     # 定义的玩家类，用来接收玩家的名称
     Player = character.Player()
+    xieyuying = character.XieYuYing()
 
     # 序章，因为需要玩家输入名字...所以这一段直接输出。
     print("I：嗨，Jinx！")
@@ -114,6 +115,7 @@ def main():
     Print(4, 4, Player_Text)
     No = int(input('你要怎么做呢？\n'))
     Your_select = Plot_branch02.Plot_branch02_Dict01[No]
+
     Player_Text.Change(4, Your_select)
     Print(4, 4, Player_Text)
 
@@ -186,7 +188,12 @@ def main():
         Print(43, 46, Monologue_Text)
 
         You_say = input()
+
+        res = baiduaip.client.sentimentClassify(Your_select)["items"][0]['sentiment']
+        print("-----------当前谢雨潆好感度为:", xieyuying.adjustImpression(res))
+
         Player_Text.Change(11, You_say)
+
         Print(11, 11, Player_Text)
 
         Print(11, 11, NPC_Text)
@@ -198,6 +205,10 @@ def main():
         Print(12, 12, NPC_Text)
 
         You_say = input()
+
+        res = baiduaip.client.sentimentClassify(Your_select)["items"][0]['sentiment']
+        print("-----------当前谢雨潆好感度为:", xieyuying.adjustImpression(res))
+
         Player_Text.Change(12, You_say)
         Print(12, 12, Player_Text)
 
@@ -205,6 +216,10 @@ def main():
         Print(13, 13, NPC_Text)
 
         You_say = input()
+
+        res = baiduaip.client.sentimentClassify(Your_select)["items"][0]['sentiment']
+        print("-----------当前谢雨潆好感度为:", xieyuying.adjustImpression(res))
+
         Player_Text.Change(12, You_say)
         Print(12, 12, Player_Text)
 

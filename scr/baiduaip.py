@@ -1,15 +1,15 @@
-import urllib, sys
-import urllib.request
-import ssl
+# import urllib, sys
+# import urllib.request
+# import ssl
 
-# client_id 为官网获取的AK， client_secret 为官网获取的SK   现在这个模块暂时用不到
-host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=G1G94LhsYYQj8shzjFtNQjLI&client_secret=G3ox550tETG34F9ZcduqbiHTLDd65IoZ'
-request = urllib.request.Request(host)
-request.add_header('Content-Type', 'application/json; charset=UTF-8')
-response = urllib.request.urlopen(request)
-content = response.read()
-if (content):
-    print(content)
+# # client_id 为官网获取的AK， client_secret 为官网获取的SK   现在这个模块暂时用不到
+# host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=G1G94LhsYYQj8shzjFtNQjLI&client_secret=G3ox550tETG34F9ZcduqbiHTLDd65IoZ'
+# request = urllib.request.Request(host)
+# request.add_header('Content-Type', 'application/json; charset=UTF-8')
+# response = urllib.request.urlopen(request)
+# content = response.read()
+# if (content):
+#     print(content)
 
 
 from aip import AipNlp
@@ -20,8 +20,9 @@ API_KEY = 'oibkBOpvGpuSHCbRqv3W2AjN'
 SECRET_KEY = '1GpZltLF6kod3dkleGEChq5Aqe999PFo'
 
 client = AipNlp(APP_ID, API_KEY, SECRET_KEY)
-
-
+# Your_select = "苹果是一家伟大的公司"
+# res = client.sentimentClassify(Your_select)['items'][0]['sentiment']
+# print(res)
 '''
 参数	是否必须	类型	说明
 text	是	string	输入的文本内容
