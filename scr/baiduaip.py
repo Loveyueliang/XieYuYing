@@ -1,14 +1,16 @@
 import urllib, sys
+import urllib.request
 import ssl
 
-# client_id 为官网获取的AK， client_secret 为官网获取的SK
-host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=G1G94LhsYYQj8shzjFtNQjLI &client_secret=G3ox550tETG34F9ZcduqbiHTLDd65IoZ'
+# client_id 为官网获取的AK， client_secret 为官网获取的SK   现在这个模块暂时用不到
+host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=G1G94LhsYYQj8shzjFtNQjLI&client_secret=G3ox550tETG34F9ZcduqbiHTLDd65IoZ'
 request = urllib.request.Request(host)
 request.add_header('Content-Type', 'application/json; charset=UTF-8')
 response = urllib.request.urlopen(request)
 content = response.read()
 if (content):
     print(content)
+
 
 from aip import AipNlp
 #情感倾向分析,,返回值是个字典,调用字典的key:sentiment 来判断是好的还是坏的,就行了

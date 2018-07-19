@@ -1,13 +1,11 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#from bin.main import main
-#目前主函数里还没有main()函数
-
+from bin.main import main
 
 if __name__ == '__main__':
     pass
-    #main()
+    main()
 
 """
 PlayPlane/
