@@ -13,12 +13,17 @@ class Setting(object):
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (230,230,230)
+class Ui_New(untitled.Ui_MainWindow):
+    '''
+    关于这个类的说明,存储的都是一些,主要参数,其实可以另外新建一个跟ui代码完全没关系的方法的,正在尝试中/....
+    '''
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "游戏界面第一次测试"))
+        self.pushButton.setText(_translate("MainWindow", "发送"))
+        self.pushButton_2.setText(_translate("MainWindow", "关闭"))
 
+        #此处为文本框的接口,后续需要完善
+        self.textBrowser.setText("关于文本输出界面第三次尝试!!!!!!!!!!")
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = untitled.Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
