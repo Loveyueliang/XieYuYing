@@ -5,7 +5,7 @@ import re
 # 装载函数，就是把文本从文件里读到程序里- -.
 def load_Text():
     # 将储存在文件中的文本内容（剧本）读取到程序并储存在一个临时列表并按照行Text01里
-    Text = open('对话.txt', 'r+', encoding='gbk')
+    Text = open('对话.txt', 'r+', encoding='utf-8')
     Text = Text.readlines()
     # 定义用来分类储存对话、旁白、独白等文本的类，文本在类中以字典的形式
     # 保存，所以还有以flag结尾的变量来表示它们对应的键。（如果还需要更多
@@ -201,7 +201,7 @@ def Chapter_01(xieyuying, Aside_Text, Monologue_Text, Player_Text, NPC_Text, Plo
 
 def main():
 
-    Text_story = load_Text()
+    Text_story = Test_Asset.Text.Text
 
     # 存储剧情分支的类，剧情分支分为主线支线（主线会触发相应的分支，而支线其实没多大影响）
     Plot_branch01 = Plot_branch.Plot_branch01()
