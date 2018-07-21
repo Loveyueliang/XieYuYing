@@ -14,6 +14,7 @@ class Setting(object):
         self.screen_height = 800
         self.bg_color = (230,230,230)
 
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
