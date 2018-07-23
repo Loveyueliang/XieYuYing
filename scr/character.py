@@ -4,7 +4,7 @@ from math import e
 class People():
     #实现一个根据剧情调用相应的对话,参数传剧情代码,类似1-11这种,暂时搁置,起码还没学数据库,暂时采用文件调用
     def __init__(self):
-        self.name = '对不起,名字未定义.'
+        self.name = '未定义'
     def invoking_database(self):
         '''
         参数用name 和剧情代码一起

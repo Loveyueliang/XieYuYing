@@ -203,7 +203,7 @@ def main():
     xieyuying = character.XieYuYing()
 
     #序章
-    #Prologue()
+    #Prologue() #序章已经整理到界面上了..
     Player.name = input()
     time.sleep(1)
 

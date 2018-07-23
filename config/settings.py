@@ -3,7 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal,QTimer
 from config.untitled import Ui_MainWindow
 from scr.Plot_branch import Prologue
-
+from scr import character
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class Setting(object):
     # 设置文件的说明
@@ -19,6 +19,7 @@ class Ui_New(Ui_MainWindow):
     '''
     关于这个类的说明,存储的都是一些,主要参数,其实可以另外新建一个跟ui代码完全没关系的方法的,正在尝试中/....
     '''
+    Player = character.Player()
     _signal = pyqtSignal(str)
     def retranslateUi(self, MainWindow):
 
@@ -33,8 +34,6 @@ class Ui_New(Ui_MainWindow):
         self.pushButton.clicked.connect(self.auto_Print)
 
         self.pushButton_2.clicked.connect(QtCore.QCoreApplication.quit)
-
-
 
         #设置一个计时器
         # self.timer = QTimer(self)
@@ -52,6 +51,10 @@ class Ui_New(Ui_MainWindow):
 
         #此处为文本框的接口,后续需要完善,,需要设定格式为水平靠右对齐
     def myPrint(self):
-        self.textBrowser.append("也是关于文本输出界面的第四次尝试!\n")
+        if self.Player.name == '未定义':
+            self.Player.name = self.textEdit.toPlainText()
+            print("+++++")
+        #print('------------',self.Player.name)
+        self.textBrowser.setText("您的名字为:\n%s"%self.Player.name)
 
 
