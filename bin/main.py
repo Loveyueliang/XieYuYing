@@ -1,11 +1,11 @@
 from scr import character, Test_Asset, baiduaip, Plot_branch
-import time
+import time#,os
 import re
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 装载函数，就是把文本从文件里读到程序里- -.
 def load_Text():
     # 将储存在文件中的文本内容（剧本）读取到程序并储存在一个临时列表并按照行Text01里
-    Text = open('对话.txt', 'r+', encoding='utf-8')
+    Text = open('material/对话.txt', 'r+', encoding='utf-8')
     Text = Text.readlines()
     # 定义用来分类储存对话、旁白、独白等文本的类，文本在类中以字典的形式
     # 保存，所以还有以flag结尾的变量来表示它们对应的键。（如果还需要更多
@@ -47,22 +47,7 @@ def Classification(Text,Aside,Monologue,Player,NPC):
             NPC_flag += 1
             NPC.Input(each, NPC_flag)
 
-# 序章内容
-def Prologue():
-    # 序章，因为需要玩家输入名字...所以这一段直接输出。
-    print("I：嗨，Jinx！")
-    # 通过输入任意键来触发下一对话！后期会更改为鼠标事件触发和超时多少秒触发！！！！！！
-    time.sleep(1.5)
-    print("I：真是的，老感觉你还在，有时候做梦都会梦见你呢……")
-    time.sleep(1.5)
-    print("I：对不起……")
-    time.sleep(1.5)
-    print("I：对了，明天我就要去做最后一件事了，如果还没有结果的话……我们就永远的再见吧！")
-    time.sleep(1.5)
-    print("I：等等，差点忘了，那张身份证我还没看呢，上面的名字是……")
-    time.sleep(1.5)
-    print("【请输入身份证姓名：name】")
-    # 这里让玩家输入名字...
+
 
 # 第一章
 def Chapter_01(xieyuying, Aside_Text, Monologue_Text, Player_Text, NPC_Text, Plot_branch01, Plot_branch02):
@@ -218,7 +203,7 @@ def main():
     xieyuying = character.XieYuYing()
 
     #序章
-    Prologue()
+    #Prologue()
     Player.name = input()
     time.sleep(1)
 
@@ -232,6 +217,4 @@ def main():
     # 序章的最后一句话，这里会用到更新后的name...
     Print(6, 6, Monologue_Text)
     Chapter_01(xieyuying, Aside_Text, Monologue_Text, Player_Text, NPC_Text, Plot_branch01, Plot_branch02)
-
-
 main()

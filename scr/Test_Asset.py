@@ -3,7 +3,7 @@ class Text:
     Dict_Text = {}
     # 输入
     #从文件里提取对话内容到临时列表,一会儿再决定用不用方法
-    Text_file = open('对话.txt', 'r+', encoding='utf-8')
+    Text_file = open('material/对话.txt', 'r+', encoding='utf-8')
     Text = Text_file.readlines()
     Text_file.close()
     def Input(self,Texts,No):

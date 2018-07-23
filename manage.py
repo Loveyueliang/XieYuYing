@@ -7,6 +7,7 @@ from config import settings
 #from bin.main import main
 
 if __name__ == "__main__":
+    #main()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = settings.Ui_New()
