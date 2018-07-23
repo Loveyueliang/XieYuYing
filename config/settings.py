@@ -42,9 +42,3 @@ class Ui_New(Ui_MainWindow):
     #     print(text)
     #     self.textBrowser.append("关于文本输出界面的第五次尝试", text)
 
-# app = QtWidgets.QApplication(sys.argv)
-# form = Ui_New()
-# #form.find.connect(find)
-# #form.replace.connect(replace)
-# form.show()
-# app.exec_()
